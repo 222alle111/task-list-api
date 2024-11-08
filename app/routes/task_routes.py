@@ -89,7 +89,7 @@ def mark_complete_on_incomplete_task(task_id):
 def send_to_slack(task):
 
     headers = {
-        "Authorization": f"Bearer {os.environ["SLACK_BOT_TOKEN"]}"
+        "Authorization": os.environ.get("SLACK_BOT_TOKEN")
     }
     request_body = {
         "channel": "task-notifications",
